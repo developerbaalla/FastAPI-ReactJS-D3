@@ -1,7 +1,7 @@
 # My App
 
 > It is an application that consumes the API to fetch data and display it as a graph:
-- Create the database using Postgresql.
+- Create the database using Postgresql because it allows user to store large and sophisticated data safely.
 - Create the backend using FastAPI/Python.
 - Create the frontend using ReactJS/D3.JS.
 
