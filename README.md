@@ -39,7 +39,7 @@ To get a local copy up and running follow these simple example steps.
 - chrome
 
 ## Setup
-git clone https://github.com/Logibaalla/FastAPI-ReactJS-D3.git
+git clone https://github.com/developerbaalla/FastAPI-ReactJS-D3.git 
 cd FastAPI-ReactJS-D3
 code.
 
