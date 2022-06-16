@@ -9,14 +9,20 @@
 ![Database schema diagram](attachments/database.png)
 
 **First Knowledge Graph**
-> It is a graph showing the sentences and associated keywords in the form of a network:
+It is a graph showing the sentences and associated keywords in the form of a network:
+
 ![knowledge graph](attachments/Graph1.PNG)
+
 **Second Tree Graph**
-> It is a graph showing the sentences and associated keywords in the form of a tree:
+It is a graph showing the sentences and associated keywords in the form of a tree:
+
 ![Tree graph](attachments/Graph2.PNG)
+
 **Third Bar Graph**
-> It is a graph showing the logits and some other information in the form of a bar:
+It is a graph showing the logits and some other information in the form of a bar:
+
 ![Bar graph](attachments/Graph3.PNG)
+
 
 ## Built With
 
