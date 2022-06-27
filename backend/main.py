@@ -22,15 +22,18 @@ app.add_middleware(
 
 
 #sentence_keywords endpoint
+#return the sentence tabel and associated keywords
 @app.get("/sentence_keywords")
-def sentence_keywords_list():
+def sentence_keywords_list(keyword: str = '', limit: int = 10):
     # create a new database session
     session = Session(bind=engine, expire_on_commit=False)
 
     try:
-        # get all sentence_keywords items
-        sentence_keywords = session.query(models.Sentence).options(joinedload(models.Sentence.sentence_keywords)).order_by(models.Sentence.date.desc()).all()
-        # with_entities(models.Sentence.id).filter(models.Sentence.id == 20)
+        # get sentence_keywords items
+        if keyword != '':
+            sentence_keywords = session.query(models.Sentence).filter(models.Sentence.sentence.ilike(f'%{keyword}%')).options(joinedload(models.Sentence.sentence_keywords)).order_by(models.Sentence.date.desc()).limit(limit).all()
+        else:
+            sentence_keywords = session.query(models.Sentence).options(joinedload(models.Sentence.sentence_keywords)).order_by(models.Sentence.date.desc()).limit(limit).all()
 
     except Exception as ex:
         raise HTTPException(status_code=404, detail=str(ex))
@@ -43,6 +46,7 @@ def sentence_keywords_list():
 
 
 #young_people endpoint
+#return the the logits and some other information
 @app.get("/young_people")
 def young_people_list():
     # create a new database session
